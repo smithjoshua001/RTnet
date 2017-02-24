@@ -125,7 +125,7 @@ static const struct file_operations proc_rtnet_rtskb_fops = {
 static int proc_rtnet_version_show(struct seq_file *p, void *data)
 {
     const char verstr[] =
-        "RTnet " RTNET_PACKAGE_VERSION " - built on " __DATE__ " " __TIME__ "\n"
+        "RTnet " RTNET_PACKAGE_VERSION "\n"
         "RTcap:      "
 #ifdef CONFIG_RTNET_ADDON_RTCAP
             "yes\n"
@@ -288,8 +288,7 @@ int __init rtnet_init(void)
     int err = 0;
 
 
-    printk("\n*** RTnet " RTNET_PACKAGE_VERSION " - built on " __DATE__ " " __TIME__
-           " ***\n\n");
+    printk("\n*** RTnet " RTNET_PACKAGE_VERSION " ***\n\n");
     printk("RTnet: initialising real-time networking\n");
 
     if ((err = rtskb_pools_init()) != 0)
